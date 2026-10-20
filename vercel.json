@@ -10,6 +10,7 @@
     { "src": "/api/foods",       "dest": "/api/foods.js"       },
     { "src": "/api/place-order", "dest": "/api/place-order.js" },
     { "src": "/api/orders",      "dest": "/api/orders.js"      },
+    { "handle": "filesystem" },
     { "src": "/(.*)",            "dest": "/index.html"         }
   ]
 }
