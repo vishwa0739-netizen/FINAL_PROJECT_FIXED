@@ -1,0 +1,14 @@
+{
+  "name": "ngh-foods",
+  "version": "1.0.0",
+  "description": "NGH Foods - Online Food Ordering System",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.47.0"
+  },
+  "devDependencies": {
+    "dotenv": "^18.0.8"
+  }
+}

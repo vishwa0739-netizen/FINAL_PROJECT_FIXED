@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NGH Foods | Online Food Ordering</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader"><div class="loader-logo">🍽️</div><h1>NGH FOODS</h1><p>Fresh food. Fast delivery.</p><div class="spinner"></div></div>
+
+<header class="navbar">
+  <a class="brand" href="#home">🍽️ NGH <span>FOODS</span></a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#restaurants">Restaurants</a>
+    <a href="#orders">Orders</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="cart-btn" onclick="openCart()">🛒 Cart <b id="cartCount">0</b></button>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div>
+      <p class="tag">NGH FOODS • ONLINE ORDERING</p>
+      <h1>Your favourite food,<br><span>delivered fresh.</span></h1>
+      <p class="hero-sub">Discover popular restaurants, browse delicious food and order your meal in a few simple clicks.</p>
+      <a class="primary" href="#menu">Order Now →</a>
+    </div>
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Burger">
+      <div><strong>Today's favourite</strong><br><span>Chicken Burger · ⭐ 4.8</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="restaurants" class="section">
+  <div class="section-title"><p class="tag">TOP RESTAURANTS</p><h2>Popular restaurants near you</h2><p>Choose from a variety of restaurants and discover their best dishes.</p></div>
+  <div class="restaurant-grid">
+    <article class="restaurant"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85"><div class="r-body"><span class="pill">4.8 ★</span><h3>Spice Garden</h3><p>South Indian • Biryani • Fast Food</p><small>25–35 min · ₹200 for two</small><a href="#menu">View Menu →</a></div></article>
+    <article class="restaurant"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85"><div class="r-body"><span class="pill">4.7 ★</span><h3>Urban Bites</h3><p>Burgers • Pizza • Snacks</p><small>20–30 min · ₹300 for two</small><a href="#menu">View Menu →</a></div></article>
+    <article class="restaurant"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=85"><div class="r-body"><span class="pill">4.6 ★</span><h3>Royal Kitchen</h3><p>Indian • Chinese • Meals</p><small>30–40 min · ₹250 for two</small><a href="#menu">View Menu →</a></div></article>
+    <article class="restaurant"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85"><div class="r-body"><span class="pill">4.9 ★</span><h3>Pizza Point</h3><p>Pizza • Pasta • Italian</p><small>25–35 min · ₹350 for two</small><a href="#menu">View Menu →</a></div></article>
+    <article class="restaurant"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85"><div class="r-body"><span class="pill">4.7 ★</span><h3>Grill House</h3><p>Grill • Chicken • BBQ</p><small>30–40 min · ₹400 for two</small><a href="#menu">View Menu →</a></div></article>
+    <article class="restaurant"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&q=85"><div class="r-body"><span class="pill">4.5 ★</span><h3>Healthy Bowl</h3><p>Healthy • Salads • Juices</p><small>20–30 min · ₹250 for two</small><a href="#menu">View Menu →</a></div></article>
+  </div>
+</section>
+
+<section id="menu" class="section menu-section">
+  <div class="section-title"><p class="tag">FULL MENU</p><h2>What are you craving?</h2><p>Explore snacks, drinks, fast food, meals, biryani and desserts.</p></div>
+  <div class="toolbar"><input id="search" oninput="renderFoods()" placeholder="🔍 Search food..."><select id="sort" onchange="renderFoods()"><option value="">Sort by</option><option value="priceLow">Price: Low to High</option><option value="priceHigh">Price: High to Low</option><option value="rating">Rating: High to Low</option></select></div>
+  <div class="filters" id="categories"></div>
+  <div id="restaurantNotice"></div>
+  <div class="food-grid" id="foodGrid"></div>
+</section>
+
+<section class="section category-section">
+  <div class="section-title"><p class="tag">EXPLORE MORE</p><h2>Food sections</h2></div>
+  <div class="big-categories">
+    <a href="#menu" onclick="choose('Snacks')"><span>🍟</span><b>Snacks</b><small>Crispy favourites</small></a>
+    <a href="#menu" onclick="choose('Drinks')"><span>🥤</span><b>Drinks</b><small>Cool & refreshing</small></a>
+    <a href="#menu" onclick="choose('Fast Food')"><span>🍔</span><b>Fast Food</b><small>Burgers & more</small></a>
+    <a href="#menu" onclick="choose('Meals')"><span>🍛</span><b>Meals</b><small>Full meals</small></a>
+    <a href="#menu" onclick="choose('Biryani')"><span>🍲</span><b>Biryani</b><small>Rich & aromatic</small></a>
+    <a href="#menu" onclick="choose('Desserts')"><span>🍨</span><b>Desserts</b><small>Sweet endings</small></a>
+  </div>
+</section>
+
+<section id="orders" class="section orders-section">
+  <div class="section-title"><p class="tag">MY ORDERS</p><h2>Track your orders</h2><p>Enter your phone number below to view all your past orders in real time.</p></div>
+  <div id="ordersList" class="orders-box">No orders yet.</div>
+</section>
+
+<section id="contact" class="contact">
+  <div><p class="tag">CONTACT NGH FOODS</p><h2>Need help with your order?</h2><p>Contact our support team for order, payment and delivery assistance.</p></div>
+  <div class="contact-card"><p>📞 <b>+91 8838889474</b></p><p>✉️ naresh@nghfoods.com</p><p>👤 <b>Naresh</b></p><p>📍 Chennai, Tamil Nadu</p></div>
+</section>
+</main>
+
+<div class="modal" id="cartModal"><div class="modal-box"><button class="close" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="cartItems"></div><div class="total">Total: ₹<span id="cartTotal">0</span></div><button class="primary full" onclick="checkout()">Proceed to Checkout</button></div></div>
+
+<div class="modal" id="checkoutModal"><div class="modal-box"><button class="close" onclick="closeCheckout()">×</button><h2>Checkout</h2><p class="muted">Enter customer details only when placing this order.</p>
+<form id="checkoutForm" onsubmit="placeOrder(event)">
+<input id="name" required placeholder="Full Name">
+<input id="phone" required placeholder="Phone Number">
+<input id="email" type="email" placeholder="Email Address">
+<textarea id="address" required placeholder="Delivery Address"></textarea>
+<select id="payment" required><option value="">Select Payment Method</option><option>Cash on Delivery</option><option>UPI</option><option>Card</option></select>
+<button type="submit" class="primary full">Place Order</button>
+</form></div></div>
+
+<footer>© 2026 NGH Foods · Online Food Ordering System</footer>
+<script src="script.js"></script>
+</body>
+</html>
