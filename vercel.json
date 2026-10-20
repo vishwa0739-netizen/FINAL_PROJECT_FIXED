@@ -2,8 +2,14 @@
   "version": 2,
   "functions": {
     "api/*.js": {
-      "memory": 128,
       "maxDuration": 10
     }
-  }
+  },
+  "routes": [
+    { "src": "/api/restaurants", "dest": "/api/restaurants.js" },
+    { "src": "/api/foods",       "dest": "/api/foods.js"       },
+    { "src": "/api/place-order", "dest": "/api/place-order.js" },
+    { "src": "/api/orders",      "dest": "/api/orders.js"      },
+    { "src": "/(.*)",            "dest": "/index.html"         }
+  ]
 }
